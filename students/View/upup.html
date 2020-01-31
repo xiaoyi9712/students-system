@@ -1,0 +1,31 @@
+学生:<input type="text" id="a"><br>
+性别:<input type="text" id="b"><br>
+语文:<input type="text" id="c"><br>
+数学:<input type="text" id="d"><br>
+英语:<input type="text" id="e"><br>
+<input type="submit" id="f"><a href="/">点我返回首页</a>
+<script>
+    var students = document.getElementById("a"),
+        sex = document.getElementById("b"),
+        chinese = document.getElementById("c"),
+        math = document.getElementById("d"),
+        english = document.getElementById("e"),
+        oBtn = document.getElementById("f");
+
+        oBtn.onclick=function(){
+            ajax({
+                url:"/updateStudent",
+                type:"post",
+                data:{
+                    students:students.value,
+                    Sex:sex.value,
+                    Chinese:chinese.value,
+                    Math:math.value,
+                    English:english.value
+                },
+                success(msg){
+                    alert(msg)
+                }
+            })
+        }
+</script>

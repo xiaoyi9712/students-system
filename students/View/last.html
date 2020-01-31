@@ -1,0 +1,18 @@
+请输入要查看的人的名字 <input type="text" id="name">
+<button id="btn">确认</button><a href="/">点击返回首页</a>
+<script>
+    let oName = document.getElementById("name"),
+        oBtn = document.getElementById("btn");
+        oBtn.onclick = function(){
+            ajax({
+                url:"/checkStudent",
+                type:"post",
+                data:{
+                    data:oName.value
+                },
+                success(msg){
+                    alert(msg)
+                }
+            })
+        }
+</script>

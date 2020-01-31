@@ -1,0 +1,34 @@
+
+学生:<input type="text" id="xuesheng"><br>
+性别:<input type="text" id="sex"><br>
+语文:<input type="text" id="chinese"><br>
+数学:<input type="text" id="math"><br>
+英语:<input type="text" id="english"><br>
+<input type="submit" id="btn"><a href="/">点我返回首页</a>
+
+
+<script>
+    var students = document.getElementById("xuesheng"),
+        sex = document.getElementById("sex"),
+        chinese = document.getElementById("chinese"),
+        math = document.getElementById("math"),
+        english = document.getElementById("english"),
+        oBtn = document.getElementById("btn");
+
+        oBtn.onclick=function(){
+            ajax({
+                url:"/addStudent",
+                type:"post",
+                data:{
+                    students:students.value,
+                    sex:sex.value,
+                    chinese:chinese.value,
+                    math:math.value,
+                    english:english.value
+                },
+                success(msg){
+                    alert(msg)
+                }
+            })
+        }
+</script>

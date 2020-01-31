@@ -1,0 +1,19 @@
+需要删除的学生姓名是 <input type="text" id="remove"><br>
+<button id="btn">确定</button><a href="/">点击返回首页</a>
+<script>
+    let oRemove = document.getElementById("remove"),
+        oBtn = document.getElementById("btn");
+
+        oBtn.onclick=function(){
+            ajax({
+                url:"/removeStudent",
+                type:"post",
+                data:{
+                    Value:remove.value
+                },
+                success(msg){
+                    alert(msg);
+                }
+            })
+        }
+</script>

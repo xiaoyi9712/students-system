@@ -1,0 +1,16 @@
+#box{
+    width:700px;
+    margin:100px auto;
+}
+table{
+    width:100%;
+    margin-top:20px;
+    margin-left:20px;
+    border-collapse:collapse;
+}
+tr,td{
+    border:1px solid #000;
+}
+a{
+    padding:10px 20px;
+}
